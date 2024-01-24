@@ -19,6 +19,8 @@ router.get("", (req, res) => {
 })
 
 router.get("/:id", (req, res) => {
+   const  id  = req.params.id
+  
     Boat.findById(id)
          .then(boat => {
             res.status(200).json(boat)
@@ -28,3 +30,5 @@ router.get("/:id", (req, res) => {
          })
 
 })
+
+module.exports = router
